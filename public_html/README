@@ -1,3 +1,22 @@
+
+
+<b>Space example that shows a couple of techniques:</b>
+
+-creating persistent designs, by setting stage.autoClear to false
+-How to save an restore canvas graphics when a canvas is resized
+-Managing multiple canvas / stages with EaselJS
+-Using touch events in JavaScript
+
+<b>Description</b>
+
+The Space Project is a demo showcasing easelJS in action having a pacman interact with your mouse or touch gestureson mobile.
+The Pacman is drawn using the arc methods and the direction of the Pacman is corresponding to the angle betwwen the mouse and the object allowing
+for a Fluid motion with direction changing.
+
+The Object state (mouth open mouth closed) is set to change every 6 frames.
+Object speed can be changed through this.speed in Drone class.
+
+------------
 The MIT License
 
 Copyright (c) 2014 Joseph el khoury
@@ -21,17 +40,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 -----------
-
-Space example that shows a couple of techniques:
-
--creating persistent designs, by setting stage.autoClear to false
--How to save an restore canvas graphics when a canvas is resized
--Managing multiple canvas / stages with EaselJS
--Using touch events in JavaScript
-
-The Space Project is a demo showcasing easelJS in action having a pacman interact with your mouse or touch gestureson mobile.
-The Pacman is drawn using the arc methods and the direction of the Pacman is corresponding to the angle betwwen the mouse and the object allowing
-for a Fluid motion with direction changing.
-
-The Object state (mouth open mouth closed) is set to change every 6 frames.
-Object speed can be changed through this.speed in Drone class.
