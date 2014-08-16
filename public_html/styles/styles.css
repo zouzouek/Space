@@ -1,0 +1,32 @@
+
+
+body
+{
+	
+	overflow: hidden;
+	margin:0em;
+	padding:0em;
+       
+}
+html { 
+  background: url("../img/land.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+/*
+canvas
+{
+	webkit-user-select:none;
+}
+*/
+
+#overlayCanvas
+{
+    
+	position:absolute;
+	left:0;
+	top:0;
+}
+
