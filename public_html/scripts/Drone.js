@@ -91,11 +91,14 @@ Drone.prototype.update = function()
     //
     //Update frame count until it reaches 6 frames then change state
     this.frameCount++;
-    if (this.frameCount / 6 == 1) {
+    if (this.frameCount %6 == 0) {
         this.reverse = !this.reverse;
         this.state = (this.reverse) ? -1 : 1;
-        this.frameCount = 0;
+        
     }
+    /*if(this.frameCount %6==0){
+        this.speed++;
+    }*/
 
     //copy our coordinates into the Point instance
     this.p2.x = this.x;
@@ -103,16 +106,34 @@ Drone.prototype.update = function()
 
     //get angle from enemy to target / ship
     var radians = MathUtil.getAngleBetweenPoints(Mouse, this.p2);
+    var distance=MathUtil.distanceBetweenPoints(Mouse,this.p2);
     this.rotation =  radians;
     //determine velocity on x and y axis
     
     var vx = Math.cos(radians) * this.speed;
     var vy = Math.sin(radians) * this.speed;
 
+    if(distance<20){
+        this.kill();
+    }
+    else{
     //update position
     this.x += vx;
     this.y += vy;
-
+    
     //redraw
     this.$draw();
+    }
 }
+Drone.prototype.kill = function()
+{
+    
+    $("#gameOver").fadeIn("slow");
+        setTimeout(function(){
+            $("#gameOver").fadeOut("slow");
+            location.reload();
+        },3000);
+        
+   
+}
+

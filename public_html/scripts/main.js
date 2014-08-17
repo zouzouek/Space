@@ -134,6 +134,7 @@ function init()
 	//add the drone to the stage
 	stage.addChild(drone);
 	
+        
 	//render the stage
 	stage.tick();
 
