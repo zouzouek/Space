@@ -127,7 +127,12 @@ Drone.prototype.update = function()
 }
 Drone.prototype.kill = function()
 {
-
+    
+    //pause game
+    var e = jQuery.Event("click");
+    jQuery("#overlayCanvas").trigger(e);
+    
+    //enter game over screen then refresh page
     $("#gameOver").fadeIn("slow");
     setTimeout(function() {
         $("#gameOver").fadeOut("slow");
