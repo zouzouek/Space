@@ -2,10 +2,10 @@
 
 #**Space example that shows a couple of techniques:**
 
-*creating persistent designs, by setting stage.autoClear to false
-*How to save an restore canvas graphics when a canvas is resized
-*Managing multiple canvas / stages with EaselJS
-*Using touch events in JavaScript
+* creating persistent designs, by setting stage.autoClear to false
+* How to save an restore canvas graphics when a canvas is resized
+* Managing multiple canvas / stages with EaselJS
+* Using touch events in JavaScript
 
 #**Description:**
 
