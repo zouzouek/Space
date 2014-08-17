@@ -1,5 +1,5 @@
 
-#** Installation :**
+#**Installation :**
 *run /public_html/index.html in you browser.*
 #**Space example that shows a couple of techniques:**
 
