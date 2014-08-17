@@ -61,12 +61,12 @@ Drone.prototype.$draw = function()
 // set angle for open mouth
     if (this.state == 1) {
         /*var startAngle = 20 * Math.PI / 180;
-        var endAngle = -20 * Math.PI / 180;*/
-        var startAngle = this.rotation+20 * Math.PI / 180;
-        var endAngle = this.rotation-20 * Math.PI / 180;
+         var endAngle = -20 * Math.PI / 180;*/
+        var startAngle = this.rotation + 20 * Math.PI / 180;
+        var endAngle = this.rotation - 20 * Math.PI / 180;
     } else {
-        var startAngle = this.rotation +7 * Math.PI / 180;
-        var endAngle = this.rotation -7 * Math.PI / 180;
+        var startAngle = this.rotation + 7 * Math.PI / 180;
+        var endAngle = this.rotation - 7 * Math.PI / 180;
     }
 //set color
     g.beginFill(this.fillColor);
@@ -91,12 +91,12 @@ Drone.prototype.update = function()
     //
     //Update frame count until it reaches 6 frames then change state
     this.frameCount++;
-    if (this.frameCount %6 == 0) {
+    if (this.frameCount % 6 == 0) {
         this.reverse = !this.reverse;
         this.state = (this.reverse) ? -1 : 1;
-        
+
     }
-    if(this.frameCount %24==0){
+    if (this.frameCount % 24 == 0) {
         this.speed++;
     }
 
@@ -106,34 +106,34 @@ Drone.prototype.update = function()
 
     //get angle from enemy to target / ship
     var radians = MathUtil.getAngleBetweenPoints(Mouse, this.p2);
-    var distance=MathUtil.distanceBetweenPoints(Mouse,this.p2);
-    this.rotation =  radians;
+    var distance = MathUtil.distanceBetweenPoints(Mouse, this.p2);
+    this.rotation = radians;
     //determine velocity on x and y axis
-    
+
     var vx = Math.cos(radians) * this.speed;
     var vy = Math.sin(radians) * this.speed;
 
-    if(distance<20){
+    if (distance < 20) {
         this.kill();
     }
-    else{
-    //update position
-    this.x += vx;
-    this.y += vy;
-    
-    //redraw
-    this.$draw();
+    else {
+        //update position
+        this.x += vx;
+        this.y += vy;
+
+        //redraw
+        this.$draw();
     }
 }
 Drone.prototype.kill = function()
 {
-    
+
     $("#gameOver").fadeIn("slow");
-        setTimeout(function(){
-            $("#gameOver").fadeOut("slow");
-            location.reload();
-        },3000);
-        
-   
+    setTimeout(function() {
+        $("#gameOver").fadeOut("slow");
+        location.reload();
+    }, 3000);
+
+
 }
 

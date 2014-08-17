@@ -30,10 +30,10 @@ canvas
 }
 .over{
     position: absolute;
-   
+
     width: 100%;
     height: 100%;
-   
+
     //visibility: hidden;
     background: url("../img/over.jpg");
     background-size: 100% 100%;
