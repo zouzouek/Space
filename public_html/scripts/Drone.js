@@ -96,9 +96,9 @@ Drone.prototype.update = function()
         this.state = (this.reverse) ? -1 : 1;
         
     }
-    /*if(this.frameCount %6==0){
+    if(this.frameCount %24==0){
         this.speed++;
-    }*/
+    }
 
     //copy our coordinates into the Point instance
     this.p2.x = this.x;
