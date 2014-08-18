@@ -58,25 +58,28 @@ Drone.prototype.$draw = function()
     var g = new Graphics();
 
     g.setStrokeStyle(1);
+
+    var startAngle, endAngle;
+
 // set angle for open mouth
     if (this.state == 1) {
         /*var startAngle = 20 * Math.PI / 180;
          var endAngle = -20 * Math.PI / 180;*/
-        var startAngle = this.rotation + 20 * Math.PI / 180;
-        var endAngle = this.rotation - 20 * Math.PI / 180;
+        startAngle = this.rotation + 20 * Math.PI / 180;
+        endAngle = this.rotation - 20 * Math.PI / 180;
     } else {
-        var startAngle = this.rotation + 7 * Math.PI / 180;
-        var endAngle = this.rotation - 7 * Math.PI / 180;
+        startAngle = this.rotation + 7 * Math.PI / 180;
+        endAngle = this.rotation - 7 * Math.PI / 180;
     }
 //set color
     g.beginFill(this.fillColor);
     g.beginStroke(this.strokeColor);
-    g.moveTo(0, 0)
+    g.moveTo(0, 0);
     //draw the hero
     g.arc(0, 0, this.radius, startAngle, endAngle);
     g.endFill();
     this.graphics = g;
-}
+};
 
 //called automatically since we subclass Shape.
 //called at each time interval
@@ -84,7 +87,7 @@ Drone.prototype.tick = function()
 {
 
     this.update();
-}
+};
 
 Drone.prototype.update = function()
 {
@@ -124,7 +127,8 @@ Drone.prototype.update = function()
         //redraw
         this.$draw();
     }
-}
+};
+
 Drone.prototype.kill = function()
 {
     
@@ -140,5 +144,5 @@ Drone.prototype.kill = function()
     }, 3000);
 
 
-}
+};
 
