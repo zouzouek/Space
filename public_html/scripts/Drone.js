@@ -110,6 +110,7 @@ Drone.prototype.update = function()
     //get angle from enemy to target / ship
     var radians = MathUtil.getAngleBetweenPoints(Mouse, this.p2);
     var distance = MathUtil.distanceBetweenPoints(Mouse, this.p2);
+    var foodDistance = MathUtil.distanceBetweenPoints(FoodLocation, this.p2);
     this.rotation = radians;
     //determine velocity on x and y axis
 
@@ -118,6 +119,10 @@ Drone.prototype.update = function()
 
     if (distance < 20) {
         this.kill();
+    }
+
+    if(foodDistance < 350){
+        this.eat();
     }
     else {
         //update position
@@ -131,11 +136,11 @@ Drone.prototype.update = function()
 
 Drone.prototype.kill = function()
 {
-    
+
     //pause game
     var e = jQuery.Event("click");
     jQuery("#overlayCanvas").trigger(e);
-    
+
     //enter game over screen then refresh page
     $("#gameOver").fadeIn("slow");
     setTimeout(function() {
@@ -146,3 +151,12 @@ Drone.prototype.kill = function()
 
 };
 
+Drone.prototype.eat = function(){
+    this.speed = this.speed - 2;
+    var newX = MathUtil.generateRandomNumber($('#mainCanvas').width());
+    var newY = MathUtil.generateRandomNumber($('#mainCanvas').height());
+    FoodLocation.x = newX;
+    FoodLocation.y = newY;
+    food.setX(newX);
+    food.setY(newY);
+};
