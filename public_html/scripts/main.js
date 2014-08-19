@@ -23,6 +23,7 @@ var targetColor;
 //Simple object to store Mouse coordinates. Used to make
 //it easy for other classes to access the data
 var Mouse = {x: 0, y: 0};
+var FoodLocation = {x: 0, y:0};
 
 //current touch id. -1 means there is no touch point currently.
 var touchID = -1;
@@ -101,7 +102,8 @@ function init()
         //EaselJS Shape that is drawn at mouse point
         targetShape = new Target(targetColor);
 
-
+        //food
+        food = new Food();
 
     }
 
@@ -134,9 +136,14 @@ function init()
     //add the drone to the stage
     stage.addChild(drone);
 
+    //add the food to the stage
+    stage.addChild(food);
+
 
     //render the stage
     stage.tick();
+
+
 
     //set the tick interval to 24 frames per second.
     Tick.setInterval(1000 / 24);
@@ -351,6 +358,13 @@ function updateMouseCoordinates(e)
     //from anywhere (other classes)
     Mouse.x = e.pageX - canvasOffset.left;
     Mouse.y = e.pageY - canvasOffset.top;
+}
+
+function updateFoodCoordinates(){
+    food.setX(MathUtil.generateRandomNumber($(window).width()));
+    food.setY(MathUtil.generateRandomNumber($(window).height()));
+    FoodLocation.x = food.getX();
+    FoodLocation.y = food.getY();
 }
 
 /************** Window Events ************/
