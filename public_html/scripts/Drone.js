@@ -41,7 +41,7 @@ Drone.prototype.rotation = 0;
 Drone.DEFAULT_RADIUS = 20;
 
 //max radius
-
+Drone.prototype.score=1;
 
 //graphics fill color
 Drone.prototype.fillColor = null;
@@ -98,6 +98,8 @@ Drone.prototype.update = function()
     }
     if (this.frameCount % 24 == 0) {
         this.speed++;
+        this.score++;
+        $("#score").html(this.score);
     }
 
     //copy our coordinates into the Point instance

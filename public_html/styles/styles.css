@@ -9,7 +9,7 @@ body
 
 }
 html { 
-    background: url("../img/land.png");
+    background: url("../img/blur.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -37,5 +37,13 @@ canvas
     //visibility: hidden;
     background: url("../img/over.jpg");
     background-size: 100% 100%;
+}
+
+.score{
+    position:absolute;
+    right:0;
+    top:0;
+    font-size: xx-large;
+    color:yellow;
 }
 

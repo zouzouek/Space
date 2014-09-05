@@ -20,27 +20,20 @@
         <title>Space Project</title>
 
         <script src="scripts/easeljs.js"></script> 
-        <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <script src="js/jquery-1.4.4.min.js"></script>
 
         <script src="scripts/MathUtil.js"></script>
         <script src="scripts/Drone.js"></script>
         <script src="scripts/Target.js"></script>
         <script src="scripts/main.js"></script>
-
+        
+        <script src="js/index.js"></script>
         <link rel="stylesheet" href="styles/styles.css">
-        <script type="text/javascript">
 
-            $(window).load(function() {
-                // Run code
-
-                $("#gameOver").hide();
-            });
-
-
-        </script>
 
     </head>
     <body>
+        <div class="score" ><span id="score">1</span>&nbsp;</div>
         <div class="over" id="gameOver">
         </div>
         <canvas id="mainCanvas" width="600" height="400"></canvas>
